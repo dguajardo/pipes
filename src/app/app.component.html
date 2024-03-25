@@ -169,6 +169,17 @@
                         {{ date | date:'MMMM - dd':'':language}}
                     </td>
                 </tr>
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>password:{{ activate }}</td>
+                    <br>
+                    <button (click)="activate= !activate" class="btn btn-outline-primary">Activar</button>
+                    <td>
+                        {{name | password:activate }}
+                    </td>
+
+
+                </tr>
             </tbody>
         </table>
         <h4><small>Slice1:4</small></h4>

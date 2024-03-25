@@ -16,6 +16,7 @@ import localeEsCl from '@angular/common/locales/es-CL';
 import localeFr from '@angular/common/locales/fr';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { PasswordPipe } from './pipes/password.pipe';
 
 registerLocaleData(localeEsCl);
 registerLocaleData(localeFr);
@@ -34,7 +35,8 @@ registerLocaleData(localeFr);
     AsyncPipe,
     DatePipe,
     CapitalizePipe,
-    DomseguroPipe
+    DomseguroPipe,
+    PasswordPipe
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es-CL' }],
   templateUrl: './app.component.html',
@@ -44,6 +46,7 @@ export class AppComponent {
   name: string = 'Captain America';
   name1: string = 'DiEgO olIVia';
   date: Date = new Date();
+  activate: boolean = true;
   array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   arr = ['IronMan', 'Thor', 'Hawkeye', 'SpiderMan', 'CaptainAmerica'];
   PI: number = Math.PI;

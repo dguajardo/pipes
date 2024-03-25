@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   UpperCasePipe,
@@ -8,9 +8,12 @@ import {
   PercentPipe,
   CurrencyPipe,
   JsonPipe,
-  AsyncPipe
+  AsyncPipe,
+  DatePipe, registerLocaleData
 } from '@angular/common';
+import localeEsCl from '@angular/common/locales/es-CL';
 
+registerLocaleData(localeEsCl);
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,8 +26,10 @@ import {
     PercentPipe,
     CurrencyPipe,
     JsonPipe,
-    AsyncPipe
+    AsyncPipe,
+    DatePipe
   ],
+  providers: [ {provide:LOCALE_ID,useValue:'es-CL'} ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -52,5 +57,7 @@ export class AppComponent {
       country: 'USA'
     }
   };
+
+
 
 }

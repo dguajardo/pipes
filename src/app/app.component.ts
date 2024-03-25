@@ -12,8 +12,9 @@ import {
   DatePipe, registerLocaleData
 } from '@angular/common';
 import localeEsCl from '@angular/common/locales/es-CL';
-
+import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeEsCl);
+registerLocaleData(localeFr);
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -41,6 +42,7 @@ export class AppComponent {
   PI: number = Math.PI;
   percentage: number = 0.235;
   salary: number = 1234.5;
+  language: string = 'EN';
 
   promise = new Promise((resolve, reject) => {
     setTimeout(() => {

@@ -9,10 +9,13 @@ import {
   CurrencyPipe,
   JsonPipe,
   AsyncPipe,
-  DatePipe, registerLocaleData
+  DatePipe,
+  registerLocaleData,
 } from '@angular/common';
 import localeEsCl from '@angular/common/locales/es-CL';
 import localeFr from '@angular/common/locales/fr';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+
 registerLocaleData(localeEsCl);
 registerLocaleData(localeFr);
 @Component({
@@ -28,14 +31,16 @@ registerLocaleData(localeFr);
     CurrencyPipe,
     JsonPipe,
     AsyncPipe,
-    DatePipe
+    DatePipe,
+    CapitalizePipe,
   ],
-  providers: [ {provide:LOCALE_ID,useValue:'es-CL'} ],
+  providers: [{ provide: LOCALE_ID, useValue: 'es-CL' }],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   name: string = 'Captain America';
+  name1: string = 'DiEgO olIVia';
   date: Date = new Date();
   array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   arr = ['IronMan', 'Thor', 'Hawkeye', 'SpiderMan', 'CaptainAmerica'];
@@ -47,8 +52,8 @@ export class AppComponent {
   promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('llego data');
-  }, 4500);
-});
+    }, 4500);
+  });
   hero = {
     name: 'Logan',
     nickname: 'Wolverine',
@@ -56,10 +61,7 @@ export class AppComponent {
     address: {
       city: 'New York',
       state: 'NY',
-      country: 'USA'
-    }
+      country: 'USA',
+    },
   };
-
-
-
 }

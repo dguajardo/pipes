@@ -15,6 +15,7 @@ import {
 import localeEsCl from '@angular/common/locales/es-CL';
 import localeFr from '@angular/common/locales/fr';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 registerLocaleData(localeEsCl);
 registerLocaleData(localeFr);
@@ -33,6 +34,7 @@ registerLocaleData(localeFr);
     AsyncPipe,
     DatePipe,
     CapitalizePipe,
+    DomseguroPipe
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es-CL' }],
   templateUrl: './app.component.html',
@@ -48,6 +50,8 @@ export class AppComponent {
   percentage: number = 0.235;
   salary: number = 1234.5;
   language: string = 'EN';
+  videoUrl: string =
+    'https://www.youtube.com/embed/4GVLWf-Y3Kk?si=AiSsSlcGYdVZxa1c';
 
   promise = new Promise((resolve, reject) => {
     setTimeout(() => {
